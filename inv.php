@@ -24,8 +24,6 @@
       else {
         echo "Connection established.";
       }
-
-      $conn->close();
     ?>
   </body>
 </html>
