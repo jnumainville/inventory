@@ -20,7 +20,7 @@
       the error message is given and the user is instructed to retry. */
       if ($conn->connect_error) {
         die("Connection failed for the following reason: " .
-        $conn->connect_error . ". Please try again.");
+        $conn->connect_error . " Please try again.");
       }
       else {
         echo "Connection established.";

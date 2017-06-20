@@ -25,6 +25,22 @@
       else {
         echo "Connection established.";
       }
+
+      /* Below is the sql to create the table for the inventory management
+      system with the specified columns */
+      $createTab = "";
+
+
+      /* Below ensures that the creation of the table is successful. If not, it
+      instructs the user to try again. */
+      if ($conn->query($createTab) === TRUE) {
+        echo "Table created successfully."
+      }
+      else {
+        echo "Errorcreating table: " . $conn->error . " Please try again.";
+      }
+
+      $conn->close();
     ?>
   </body>
 </html>
