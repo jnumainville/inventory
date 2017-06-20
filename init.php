@@ -31,7 +31,8 @@
         echo "Database created successfully. ";
       }
       else {
-        echo "Error creating database: " . $conn->error . " Please try again.";
+        echo "Error creating database: " . $conn->error . ". Please try again "
+        . "if the database is not already created.";
       }
 
       $conn->close();
