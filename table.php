@@ -28,7 +28,7 @@
 
       /* Below is the sql to create the table for the inventory management
       system with the specified columns */
-      $createTab = "CREATE TABLE /*need name here for table*/(
+      $createTab = "CREATE TABLE tab (
 
 
 
@@ -41,7 +41,7 @@
         echo "Table created successfully."
       }
       else {
-        echo "Errorcreating table: " . $conn->error . ". Please try again.";
+        echo "Error creating table: " . $conn->error . ". Please try again.";
       }
 
       $conn->close();
