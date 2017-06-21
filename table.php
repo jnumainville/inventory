@@ -32,10 +32,11 @@
       $createTab = "CREATE TABLE Tasks (
         id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         title VARCHAR(255) NOT NULL,
-        description TEXT(65535),
+        description TEXT(65535) NOT NULL,
         assigned TIMESTAMP,
-        due DATE,
-        dueTime TIME
+        due DATE NOT NULL,
+        dueTime TIME NOT NULL,
+        completed ENUM('N','Y') NOT NULL
       )";
 
       // Below ensures that the creation of the table is successful. If not, it
@@ -43,7 +44,7 @@
       if ($conn->query($createTab) === TRUE) {
         echo "Table created successfully";
       } else {
-        echo "Error creating table: " . $conn->error;
+        echo "Error creating table for the following reason: " . $conn->error;
       }
       $conn->close();
     ?>
