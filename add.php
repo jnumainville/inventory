@@ -23,7 +23,7 @@
         $conn->connect_error);
       }
       else {
-        echo "Connection established.";
+        echo "Connection established. ";
       }
 
       $newEntry = "INSERT INTO Tasks (title, description, due, dueTime, completed)
