@@ -3,15 +3,6 @@
   <head>
   </head>
   <body>
-    <h2>Add a Task:</h2>
-    <form action="" method =  "post">
-      Title: <input type = 'text' name = 'title'><br>
-      Description: <input type = 'text' name = 'description'><br>
-      Due Date: <input type = 'text' name = 'due'><br>
-      Due Time: <input type = 'text' name = 'dueTime'><br>
-      Completed (Y/N): <input type = 'text' name = 'completed'><br>
-      <input type = "submit" value = "Add Task">
-    </form>
     <?php
       /*$servername, $username, $password, and $port are used to connect to the
       mySQL server. change as necessary for your installation. 3306 is the
@@ -51,10 +42,17 @@
 
       //below executes the assignment
       $stmt->execute();
-      //echo "Record added successfully. ";
-
+      echo "Record added successfully. ";
       $stmt->close();
       $conn->close();
     ?>
+
+    <p>Would you like to add another task?</p>
+    <form action="/form.html">
+      <input type="submit" value="Yes"><br>
+    </form>
+    <form action="/main.html">
+      <input type="submit" value="No"><br>
+    </form>
   </body>
 </html>

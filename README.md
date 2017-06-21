@@ -1,3 +1,4 @@
+(This README is not currently up to date. I will update it when most of the file structure is done.)  
 This is a task management project utilizing a WAMP server. It is also a WIP.   
 init.php initializes the database.  
 add.php runs the user interface.  
