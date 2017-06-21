@@ -15,24 +15,22 @@
       $conn = new mysqli($servername, $username, $password);
 
       /* Below checks to ensure a connection to the server is made. If failed,
-      the error message is given and the user is instructed to retry. */
+      the error message is given. */
       if ($conn->connect_error) {
         die("Connection failed for the following reason: " .
-        $conn->connect_error . ". Please try again.");
+        $conn->connect_error);
       }
       else {
         echo "Connection established. ";
       }
 
-      /* Below creates the database itself. If failed, an error is given and the
-      user is instructed to retry. */
+      //Below creates the database itself. If failed, an error is given.
       $createDB = "CREATE DATABASE inv";
       if ($conn->query($createDB) === TRUE) {
         echo "Database created successfully. ";
       }
       else {
-        echo "Error creating database: " . $conn->error . ". Please try again "
-        . "if the database is not already created.";
+        echo "Error creating database: " . $conn->error;
       }
 
       $conn->close();

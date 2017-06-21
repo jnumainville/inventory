@@ -17,10 +17,10 @@
       $conn = new mysqli($servername, $username, $password, $dbname, $port);
 
       /* Below checks to ensure a connection to the server is made. If failed,
-      the error message is given and the user is instructed to retry. */
+      the error message is given. */
       if ($conn->connect_error) {
         die("Connection failed for the following reason: " .
-        $conn->connect_error . ". Please try again.");
+        $conn->connect_error);
       }
       else {
         echo "Connection established.";

@@ -17,33 +17,33 @@
       $conn = new mysqli($servername, $username, $password, $dbname, $port);
 
       /* Below checks to ensure a connection to the server is made. If failed,
-      the error message is given and the user is instructed to retry. */
+      the error message is given. */
       if ($conn->connect_error) {
         die("Connection failed for the following reason: " .
-        $conn->connect_error . ". Please try again.");
+        $conn->connect_error);
       }
       else {
         echo "Connection established.";
       }
 
-      /* Below is the sql to create the table for the inventory management
-      system with the specified columns */
-      $createTab = "CREATE TABLE tab (
 
-
-
+      // Below is the sql to create the table for the task management
+      // system with the specified columns
+      $createTab = "CREATE TABLE Tasks (
+        id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        title VARCHAR(255) NOT NULL,
+        description TEXT(65535),
+        assigned TIMESTAMP,
+        due DATE
       )";
 
-
-      /* Below ensures that the creation of the table is successful. If not, it
-      instructs the user to try again. */
+      // Below ensures that the creation of the table is successful. If not, it
+      // instructs the user to try again.
       if ($conn->query($createTab) === TRUE) {
-        echo "Table created successfully."
+        echo "Table created successfully";
+      } else {
+        echo "Error creating table: " . $conn->error;
       }
-      else {
-        echo "Error creating table: " . $conn->error . ". Please try again.";
-      }
-
       $conn->close();
     ?>
   </body>
