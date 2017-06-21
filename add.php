@@ -26,17 +26,23 @@
         echo "Connection established. ";
       }
 
-      $newEntry = "INSERT INTO Tasks (title, description, due, dueTime, completed)
-      VALUES ('Finish this', 'Finish soon', '2017-06-21', '8:00:37', 'N')";
+      //below is the prepared statement to be executed on inputs
+      $stmt = $conn->prepare("INSERT INTO Tasks (title, description, due, dueTime, completed)
+      VALUES (?, ?, ?, ?, ?)");
+      $stmt->bind_param("sssss", $title, $description, $due, $dueTime, $completed);
 
-      //Below inserts $newEntry into the table and retutns an error if failed
-      if ($conn->query($newEntry) === TRUE) {
-        echo "The task has been added to your list.";
-      }
-      else {
-        echo "Error when attempting to add your task: " . $conn->error;
-      }
+      //below stores the data to enter to the table
+      $title = 'Test Title';
+      $description = 'Test description';
+      $due = '2017:06:21';
+      $dueTime = '08:12:17';
+      $completed = 'Y';
 
+      //below executes the assignment
+      $stmt->execute();
+      echo "Record added successfully. ";
+
+      $stmt->close();
       $conn->close();
     ?>
   </body>
