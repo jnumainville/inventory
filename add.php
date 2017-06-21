@@ -43,6 +43,7 @@
       //below executes the assignment
       $stmt->execute();
       echo "Record added successfully. ";
+      
       $stmt->close();
       $conn->close();
     ?>
