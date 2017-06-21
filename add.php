@@ -26,16 +26,16 @@
         echo "Connection established.";
       }
 
-      /*$newEntry = "INSERT INTO Tasks (title, description, due, dueTime, completed)
+      $newEntry = "INSERT INTO Tasks (title, description, due, dueTime, completed)
       VALUES ('Finish this', 'Finish soon', '2017-06-21', '8:00:37', 'N')";
 
       //Below inserts $newEntry into the table and retutns an error if failed
       if ($conn->query($newEntry) === TRUE) {
-        echo "The task has been added to your list."
+        echo "The task has been added to your list.";
       }
       else {
         echo "Error when attempting to add your task: " . $conn->error;
-      } */
+      }
 
       $conn->close();
     ?>
