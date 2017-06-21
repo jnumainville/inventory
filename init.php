@@ -25,7 +25,7 @@
       }
 
       //Below creates the database itself. If failed, an error is given.
-      $createDB = "CREATE DATABASE inv";
+      $createDB = "CREATE DATABASE List";
       if ($conn->query($createDB) === TRUE) {
         echo "Database created successfully. ";
       }

@@ -10,7 +10,7 @@
       $servername = "localhost";
       $username = "user";
       $password = "password";
-      $dbname = "inv";
+      $dbname = "List";
       $port = 3306;
 
       //Creates a new connection to the server utilizing variables above.
@@ -23,7 +23,7 @@
         $conn->connect_error);
       }
       else {
-        echo "Connection established.";
+        echo "Connection established. ";
       }
 
 
