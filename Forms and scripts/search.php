@@ -18,19 +18,32 @@
     $conn = new mysqli($servername, $username, $password, $dbname, $port);
 
     //below is the prepared statement for searching
-    $stmt = $conn->prepare("SELECT * FROM Tasks WHERE id = ?");
-    $stmt->bind_param("i", $id);
+    $stmt = $conn->prepare("SELECT * FROM Tasks WHERE id = ? OR title = ?
+    OR description = ? OR due = ? OR dueTime = ?");
+    $stmt->bind_param("issss", $id, $title, $description, $due, $dueTime);
 
     //variable assignments for search from viewform.html
     $id = $_POST['id'];
+    $title = $_POST['title']
+    $description = $_POST['description'];
+    $due = $_POST['due'];
+    $dueTime = $_POST['dueTime'];
 
     //executes the search given parameters and statement above
     $stmt->execute();
-    $stmt->bind_result($id, $title);
+    $stmt->bind_result($id, $title, $description, $due, $dueTime);
 
     // output data of each row
-    while($stmt->fetch()) {
-        echo "id: " . $id . "title: " . $title;
+    if ($query->num_rows > 0) {
+      while($row = $query->fetch_assoc()) {
+        echo "Number: " . $row['id'] .  " " . "|" . " Title: " . $row['title']
+        . " " . "|" . " Description: " . $row['description'] . " " . "|"
+        . " Time due: " . $row['due'] . " " . $row['dueTime'] . " " . "|"
+        . " Completed: " . $row['completed'] . "<br>";
+      }
+    }
+    else {
+      echo "Your search returned no results.";
     }
 
     $stmt->close();
