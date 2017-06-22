@@ -37,5 +37,24 @@
 
     $conn->close();
     ?>
+
+    <!--below is the html to navigate back to the home page-->
+    <br>
+    <div>Other options:</div>
+    <form action = "../main.html">
+      <input type="submit" value="Back to Home">
+    </form>
+    <form action = "searchform.html">
+      <input type="submit" value="Search for a task">
+    </form>
+    <form action = "updateform.html">
+      <input type="submit" value="Update a task">
+    </form>
+    <form action = "addform.html">
+      <input type="submit" value="Add a task">
+    </form>
+    <form action = "deleteform.html">
+      <input type="submit" value="Delete a task">
+    </form>
   </body>
 </html>
