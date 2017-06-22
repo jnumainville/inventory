@@ -1,4 +1,6 @@
-This is a task management project, but is also a WIP.  
+This is a task management project, but is also a WIP.
+Basic functions, such as adding, deleting, and listing all tasks are done, but
+updating and searching through tasks is currently not complete.    
 **How to use this tool:**  
 First, you will need to download a server with support for php and mysql
 specifically. I used the WAMP server from Bitnami that can be downloaded
