@@ -5,13 +5,14 @@
   <body>
     <h2>Update a Task:</h2>
     <p>Please only enter data you would like to update:</p>
-    <form action = "/update.php" method = "post">
+    <form action = "./update.php" method = "post">
       Number of task to update: <input type = 'int' name = 'id'><br>
       Title: <input type = 'text' name = 'title'><br>
       Description: <input type = 'text' name = 'description'><br>
       Due Date (YYYY-MM-DD): <input type = 'text' name = 'due'><br>
       Due Time (HH:MI:SS): <input type = 'text' name = 'dueTime'><br>
       Completed (Y/N): <input type = 'text' name = 'completed'><br>
+      <input type = "submit" value = "Update Task">
     </form>
     <br>
     <div>Other options:</div>

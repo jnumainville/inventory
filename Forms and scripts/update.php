@@ -40,30 +40,57 @@
     if ($title != "") {
       $stmtTitle->execute();
       $stmtTitle->close();
-      echo "Title changed successfully";
+      echo "Title changed successfully.<br>";
     }
+    else {
+      echo "Title was not changed.<br>";
+    }
+
     if ($description != "") {
       $stmtDes->execute();
       $stmtDes->close();
-      echo "Description changed successfully";
+      echo "Description changed successfully.<br>";
     }
+    else {
+      echo "Description was not changed.<br>";
+    }
+
     if ($due != "") {
       $stmtDue->execute();
       $stmtDue->close();
-      echo "Date changed successfully";
+      echo "Date changed successfully.<br>";
     }
+    else {
+      echo "Date was not changed.<br>";
+    }
+
     if ($dueTime != "") {
       $stmtDueT->execute();
       $stmtDueT->close();
-      echo "Time changed successfully";
+      echo "Time changed successfully.<br>";
     }
+    else {
+      echo "Time was not changed.<br>";
+    }
+
     if ($completed != "") {
       $stmtComp->execute();
       $stmtComp->close();
-      echo "Completed status changed successfully";
+      echo "Completed status changed successfully.<br>";
+    }
+    else {
+      echo "Completed status was not changed.<br>";
     }
 
     $conn->close();
     ?>
+    <!--Below checks if the user would like to update another task-->
+    <p>Would you like to update another task?</p>
+    <form action="./updateform.html">
+      <input type="submit" value="Yes"><br>
+    </form>
+    <form action="../main.html">
+      <input type="submit" value="No"><br>
+    </form>
   </body>
 </html>
