@@ -48,6 +48,7 @@
       $conn->close();
     ?>
 
+    <!--Below checks if the user would like to add another task-->
     <p>Would you like to add another task?</p>
     <form action="/addform.html">
       <input type="submit" value="Yes"><br>
