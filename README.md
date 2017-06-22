@@ -1,10 +1,10 @@
-(This README is not currently up to date. I will update it when most of the file structure is done.)  
-This is a task management project utilizing a WAMP server. It is also a WIP.   
-init.php initializes the database.  
-add.php runs the user interface.  
-init.php should run once and should return an error after.  
-table.php should then be ran to create the necessary table within the database.  
-add.php adds the entries to the database and style.css provides the style.  
-On the Bitnami WAMP server specifically the files were moved to htdocs under the apache2 directory. The scripts can then be accessed by going to localhost/init.php, localhost/table.php, etc.  
-Other setups are not, at this time, directly supported, but should still work, as long as they support MySQLi Object-Oriented.  
-Please note that this application, at this time, is NOT intended to be deployed over the internet as there is very little security.
+This is a task management project, but is also a WIP.  
+**How to use this tool:**  
+First, you will need to download a server with support for php and mysql
+specifically. I used the WAMP server from Bitnami that can be downloaded
+[here](https://bitnami.com/stack/wamp).  
+After you have that started, you will want to run init.php in the Creation files
+to create the database itself. Then you will want to run table.php to create the
+required table for the other files to use.
+After that, you can go to localhost/main.html to be brought to the main page of
+the application, where you can start using the task list.   
