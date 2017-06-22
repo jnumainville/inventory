@@ -49,7 +49,7 @@
     ?>
 
     <p>Would you like to add another task?</p>
-    <form action="/form.html">
+    <form action="/addform.html">
       <input type="submit" value="Yes"><br>
     </form>
     <form action="/main.html">

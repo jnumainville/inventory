@@ -18,7 +18,7 @@
     $conn = new mysqli($servername, $username, $password, $dbname, $port);
 
     //below is the prepared statement for searching
-    $stmt = $conn->prepare("SELECT * FROM Tasks WHERE id = ? VALUES (?)");
+    $stmt = $conn->prepare("SELECT * FROM Tasks WHERE id = ?");
     $stmt->bind_param("i", $id);
 
     //variable assignments for search from viewform.html
@@ -26,11 +26,11 @@
 
     //executes the search given parameters and statement above
     $stmt->execute();
-    $stmt->bind_result($id);
+    $stmt->bind_result($id, $title);
 
     // output data of each row
     while($stmt->fetch()) {
-        echo "id: " . $id;
+        echo "id: " . $id . "title: " . $title;
     }
 
     $stmt->close();
