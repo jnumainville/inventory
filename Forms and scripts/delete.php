@@ -23,7 +23,7 @@
 
       //below executes the statement
       $stmt->execute();
-      echo "Record deleted successfully";
+      echo "Task deleted successfully";
 
       $stmt->close();
       $conn->close();

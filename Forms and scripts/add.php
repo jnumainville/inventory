@@ -50,10 +50,10 @@
 
     <!--Below checks if the user would like to add another task-->
     <p>Would you like to add another task?</p>
-    <form action="/addform.html">
+    <form action="./addform.html">
       <input type="submit" value="Yes"><br>
     </form>
-    <form action="/main.html">
+    <form action="../main.html">
       <input type="submit" value="No"><br>
     </form>
   </body>
