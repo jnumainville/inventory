@@ -44,28 +44,28 @@
       echo ("<table><tr><th>Number</th>"
       . "<th>Title</th><th>Description</th><th>Time Due</th>"
       . "<th>Completed</th></tr>");
-      /*while($row = $result->fetch_assoc()) {
-        $id[] = $row['id'];
-        $title[] = $row['title'];
-        $description[] = $row['description'];
-        $due[] = $row['due'];
-        $dueTime[] = $row['dueTime'];
-        $completed[] = $row['completed'];
-      }
-      for (int i = 0; i < count($id); i++) {
-        echo ("<tr><td>" . $id[i] . "</td><td>" . $title[i]
-        . "</td><td>" . $description[i] . "</td><td>" . $due[i]
-        . " " . $dueTime[i] . "</td><td>" . $completed[i]
+      while($row = $result->fetch_assoc()) {
+        echo ("<tr><td>" . $row['id'] . "</td><td>" . $row['title']
+        . "</td><td>" . $row['description']  . "</td><td>" . $row['due']
+        . " " . $row['dueTime']  . "</td><td>" . $row['completed']
         . "</td></tr>");
-      }*/
+      }
       echo "</table>";
     }
     else {
       echo "<p>Your search returned no results.</p>";
     }
-
+    $result->free();
     $stmt->close();
     $conn->close();
-     ?>
+    ?>
+     <!--Below checks if the user would like to search for another task?-->
+     <p>Would you like to search again?</p>
+     <form action="./searchform.html">
+       <input type="submit" value="Yes"><br>
+     </form>
+     <form action="../main.html">
+       <input type="submit" value="No"><br>
+     </form>
   </body>
 </html>
