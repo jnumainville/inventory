@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
   </head>
   <body>
     <?php
@@ -22,14 +23,18 @@
 
     echo "<h2>All tasks:</h2>";
 
-    //below checks to ensure their are results and lists them
+    //below checks to ensure their are results and lists them in an html table
     if ($query->num_rows > 0) {
+      //headers of table in format: Number Title Description Time Due Completed
+      echo ("<table><tr><th>Number</th>"
+      . "<th>Title</th><th>Description</th><th>Time Due</th>
+      . <th>Completed</th></tr>");
       while($row = $query->fetch_assoc()) {
-        echo "Number: " . $row['id'] .  " " . "|" . " Title: " . $row['title']
-        . " " . "|" . " Description: " . $row['description'] . " " . "|"
-        . " Time due: " . $row['due'] . " " . $row['dueTime'] . " " . "|"
-        . " Completed: " . $row['completed'] . "<br>";
+        echo ("<tr><td>" . $row['id'] . "</td><td>" . $row['title'] . "</td><td>"
+        . $row['description'] . "</td><td>" . $row['due'] . " " . $row['dueTime']
+        . "</td><td>" . $row['completed'] . "</td></tr>");
       }
+      echo "</table>";
     }
     else {
       echo "Your task list is empty.";
@@ -40,6 +45,7 @@
 
     <!--below is the html to navigate back to the home page-->
     <br>
+    <div class = "navigation">
     <div>Other options:</div>
     <form action = "../main.html">
       <input type="submit" value="Back to Home">
@@ -56,5 +62,6 @@
     <form action = "deleteform.html">
       <input type="submit" value="Delete a task">
     </form>
+  </div>
   </body>
 </html>
