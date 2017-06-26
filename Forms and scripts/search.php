@@ -41,10 +41,10 @@
     // output data of each row
     if ($result->num_rows > 0) {
       //headers of table in format: Number Title Description Time Due Completed
-      /*echo ("<table><tr><th>Number</th>"
-      . "<th>Title</th><th>Description</th><th>Time Due</th>
-      . <th>Completed</th></tr>");
-      while($row = $result->fetch_assoc()) {
+      echo ("<table><tr><th>Number</th>"
+      . "<th>Title</th><th>Description</th><th>Time Due</th>"
+      . "<th>Completed</th></tr>");
+      /*while($row = $result->fetch_assoc()) {
         $id[] = $row['id'];
         $title[] = $row['title'];
         $description[] = $row['description'];
@@ -57,15 +57,14 @@
         . "</td><td>" . $description[i] . "</td><td>" . $due[i]
         . " " . $dueTime[i] . "</td><td>" . $completed[i]
         . "</td></tr>");
-      }
-      echo "</table>"; */
+      }*/
+      echo "</table>";
     }
     else {
       echo "<p>Your search returned no results.</p>";
     }
 
     $stmt->close();
-
     $conn->close();
      ?>
   </body>
