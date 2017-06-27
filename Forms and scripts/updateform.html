@@ -7,13 +7,31 @@
     <h2>Update a Task:</h2>
     <p>Please only enter data you would like to update.</p>
     <form action = "./update.php" method = "post">
-      Number of task to update: <input type = 'int' name = 'id'><br>
-      Title: <input type = 'text' name = 'title'><br>
-      Description: <input type = 'text' name = 'description'><br>
-      Due Date (YYYY-MM-DD): <input type = 'text' name = 'due'><br>
-      Due Time (HH:MI:SS): <input type = 'text' name = 'dueTime'><br>
-      Completed (Y/N): <input type = 'text' name = 'completed'><br>
-      <input class = "button" type = "submit" value = "Update Task">
+      <div class = 'contain'>
+        <div class = 'search'>Number:</div>
+        <div class = 'search'><input type = 'int' name = 'id'></div>
+      </div>
+      <div class = 'contain'>
+        <div class = 'search'>Title:</div>
+        <div class = 'search'><input type = 'text' name = 'title'></div>
+      </div>
+      <div class = 'contain'>
+        <div class = 'search'>Description:</div>
+        <div class = 'search'><input type = 'text' name = 'description'></div>
+      </div>
+      <div class = 'contain'>
+        <div class = 'search'>Due Date (YYYY-MM-DD):</div>
+        <div class = 'search'><input type = 'text' name = 'due'></div>
+      </div>
+      <div class = 'contain'>
+        <div class = 'search'>Due Time (HH:MI:SS):</div>
+        <div class = 'search'><input type = 'text' name = 'dueTime'></div>
+      </div>
+      <div class = 'contain'>
+        <div class = 'search'>Completed (Y/N):</div>
+        <div class = 'search'><input type = 'text' name = 'completed'></div>
+      </div>
+      <input class = "button" type = "submit" value = "Update">
     </form>
     <br>
     <div>Other options:</div>

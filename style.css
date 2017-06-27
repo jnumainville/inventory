@@ -25,11 +25,17 @@ table, th, td {
   border: none;
   padding: 5px;
   margin: 2px;
+  width: 125px;
 }
 
 .button:hover {
   background-color: #548687;
 }
 
-.navigation {
+.search {
+  width: 250px;
+  display: inline-block;
+}
+
+.contain {
 }
