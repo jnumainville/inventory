@@ -24,20 +24,32 @@
       //below stores the id number taken from the html form
       $id = $_POST['id'];
 
-      //below executes the statement
-      $stmt->execute();
-      echo "Task deleted successfully";
+      //below checks to ensure that there is a task with that id, then executes
+      $stmtSearch = $conn->prepare("SELECT * FROM Tasks WHERE id = ?");
+      $stmtSearch->bind_param("i", $id);
+      $stmtSearch->execute();
+      $result = $stmtSearch->get_result();
 
+      if ($result->num_rows == 0) {
+        echo "That number was not found.";
+      }
+      else {
+        $stmt->execute();
+        echo "Task deleted successfully.";
+      }
+
+      $result->free();
+      $stmtSearch->close();
       $stmt->close();
       $conn->close();
     ?>
 
     <!--Below checks if the user would like to delete another entry-->
     <p>Would you like to delete another task?</p>
-    <form action="/deleteform.html">
+    <form action="./deleteform.html">
       <input class = "button" type="submit" value="Yes"><br>
     </form>
-    <form action="/main.html">
+    <form action="../main.html">
       <input class = "button" type="submit" value="No"><br>
     </form>
   </body>

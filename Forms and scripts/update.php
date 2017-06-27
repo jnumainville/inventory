@@ -38,51 +38,65 @@
     $completed = $_POST['completed'];
 
     //below checks and exectues the prepared statements if they need to be executed
-    if ($title != "") {
-      $stmtTitle->execute();
-      $stmtTitle->close();
-      echo "Title changed successfully.<br>";
-    }
-    else {
-      echo "Title was not changed.<br>";
+    $stmtSearch = $conn->prepare("SELECT * FROM Tasks WHERE id = ?");
+    $stmtSearch->bind_param("i", $id);
+    $stmtSearch->execute();
+    $result = $stmtSearch->get_result();
+
+    if ($result->num_rows == 0) {
+      echo "That number was not found. <br>";
     }
 
-    if ($description != "") {
-      $stmtDes->execute();
-      $stmtDes->close();
-      echo "Description changed successfully.<br>";
-    }
     else {
-      echo "Description was not changed.<br>";
+      echo "Number: $id <br>";
+      if ($title != "") {
+        $stmtTitle->execute();
+        $stmtTitle->close();
+        echo "Title changed successfully.<br>";
+      }
+      else {
+        echo "Title was not changed.<br>";
+      }
+
+      if ($description != "") {
+        $stmtDes->execute();
+        $stmtDes->close();
+        echo "Description changed successfully.<br>";
+      }
+      else {
+        echo "Description was not changed.<br>";
+      }
+
+      if ($due != "") {
+        $stmtDue->execute();
+        $stmtDue->close();
+        echo "Date changed successfully.<br>";
+      }
+      else {
+        echo "Date was not changed.<br>";
+      }
+
+      if ($dueTime != "") {
+        $stmtDueT->execute();
+        $stmtDueT->close();
+        echo "Time changed successfully.<br>";
+      }
+      else {
+        echo "Time was not changed.<br>";
+      }
+
+      if ($completed != "") {
+        $stmtComp->execute();
+        $stmtComp->close();
+        echo "Completed status changed successfully.<br>";
+      }
+      else {
+        echo "Completed status was not changed.<br>";
+      }
     }
 
-    if ($due != "") {
-      $stmtDue->execute();
-      $stmtDue->close();
-      echo "Date changed successfully.<br>";
-    }
-    else {
-      echo "Date was not changed.<br>";
-    }
-
-    if ($dueTime != "") {
-      $stmtDueT->execute();
-      $stmtDueT->close();
-      echo "Time changed successfully.<br>";
-    }
-    else {
-      echo "Time was not changed.<br>";
-    }
-
-    if ($completed != "") {
-      $stmtComp->execute();
-      $stmtComp->close();
-      echo "Completed status changed successfully.<br>";
-    }
-    else {
-      echo "Completed status was not changed.<br>";
-    }
-
+    $result->free();
+    $stmtSearch->close();
     $conn->close();
     ?>
     <!--Below checks if the user would like to update another task-->
