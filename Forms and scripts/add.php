@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
   </head>
   <body>
     <?php
@@ -23,7 +24,7 @@
         die("Connection failed for the following reason: " .
         $conn->connect_error);
       }
-      else {
+      class = "button" else {
         echo "Connection established. ";
       }
       */
@@ -41,8 +42,16 @@
       $completed = $_POST['completed'];
 
       //below executes the assignment
-      $stmt->execute();
-      echo "Record added successfully. ";
+      if ($title == "" || $due == "" || $dueTime == "") {
+        echo "Task not added due to empty field. Only description can be empty.";
+      }
+      else if ($completed != "N" && $completed != "Y") {
+        echo "Task not added due to invalid field. Completed must be Y or N.";
+      }
+      else {
+        $stmt->execute();
+        echo "Task added successfully. ";
+    }
 
       $stmt->close();
       $conn->close();
@@ -51,10 +60,10 @@
     <!--Below checks if the user would like to add another task-->
     <p>Would you like to add another task?</p>
     <form action="./addform.html">
-      <input type="submit" value="Yes"><br>
+      <input class = "button" type="submit" value="Yes"><br>
     </form>
     <form action="../main.html">
-      <input type="submit" value="No"><br>
+      <input class = "button" type="submit" value="No"><br>
     </form>
   </body>
 </html>

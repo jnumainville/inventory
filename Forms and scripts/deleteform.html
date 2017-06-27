@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
   </head>
   <body>
     <h2>Delete a Task:</h2>
     <form action="./delete.php" method="post">
       Please input the number of the task you would like to delete:
       <input type = 'int' name = 'id'><br>
-      <input type = "submit" value = "Delete">
+      <input class = "button" type = "submit" value = "Delete">
     </form>
     <br>
     <div>Other options:</div>
     <form action = "../main.html">
-      <input type="submit" value="Back to Home">
+      <input class = "button" type="submit" value="Back to Home">
     </form>
     <form action = "viewall.php">
-      <input type="submit" value="View all tasks">
+      <input class = "button" type="submit" value="View all tasks">
     </form>
     <form action = "searchform.html">
-      <input type="submit" value="Search for a task">
+      <input class = "button" type="submit" value="Search for a task">
     </form>
     <form action = "updateform.html">
-      <input type="submit" value="Update a task">
+      <input class = "button" type="submit" value="Update a task">
     </form>
     <form action = "addform.html">
-      <input type="submit" value="Add a task">
+      <input class = "button" type="submit" value="Add a task">
     </form>
   </body>
 </html>

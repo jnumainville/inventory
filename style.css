@@ -1,3 +1,9 @@
+body {
+  background-color: #D4D5D8;
+  color: #4D4E51;
+  font-family: "Arial", sans-serif;
+}
+
 table {
   width: 90%;
   float: left;
@@ -7,7 +13,22 @@ table {
 }
 
 table, th, td {
-  border: 1px solid black;
+  border: 1px solid #4D4E51;
+}
+
+.button {
+  background-color: #4D4E51;
+  color: #D4D5D8;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  padding: 5px;
+  margin: 2px;
+}
+
+.button:hover {
+  background-color: #548687;
 }
 
 .navigation {

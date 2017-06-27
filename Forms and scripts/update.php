@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
   </head>
   <body>
     <?php
@@ -87,10 +88,10 @@
     <!--Below checks if the user would like to update another task-->
     <p>Would you like to update another task?</p>
     <form action="./updateform.html">
-      <input type="submit" value="Yes"><br>
+      <input class = "button" type="submit" value="Yes"><br>
     </form>
     <form action="../main.html">
-      <input type="submit" value="No"><br>
+      <input class = "button" type="submit" value="No"><br>
     </form>
   </body>
 </html>

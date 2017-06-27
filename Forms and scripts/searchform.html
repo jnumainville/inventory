@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
   </head>
   <body>
     <h2>Search for a Task or Tasks:</h2>
@@ -8,27 +9,27 @@
       Number: <input type = 'int' name = 'id'><br>
       Title: <input type = 'text' name = 'title'><br>
       Description: <input type = 'text' name = 'description'><br>
-      Due Date: <input type = 'text' name = 'due'><br>
-      Due Time: <input type = 'text' name = 'dueTime'><br>
+      Due Date (YYYY-MM-DD): <input type = 'text' name = 'due'><br>
+      Due Time (HH:MI:SS): <input type = 'text' name = 'dueTime'><br>
       Completed (Y/N): <input type = 'text' name = 'completed'><br>
-      <input type = "submit" value = "Search">
+      <input class = "button" type = "submit" value = "Search">
     </form>
     <br>
     <div>Other options:</div>
     <form action = "../main.html">
-      <input type="submit" value="Back to Home">
+      <input class = "button" type="submit" value="Back to Home">
     </form>
     <form action = "viewall.php">
-      <input type="submit" value="View all tasks">
+      <input class = "button" type="submit" value="View all tasks">
     </form>
     <form action = "updateform.html">
-      <input type="submit" value="Update a task">
+      <input class = "button" type="submit" value="Update a task">
     </form>
     <form action = "addform.html">
-      <input type="submit" value="Add a task">
+      <input class = "button" type="submit" value="Add a task">
     </form>
     <form action = "deleteform.html">
-      <input type="submit" value="Delete a task">
+      <input class = "button" type="submit" value="Delete a task">
     </form>
   </body>
 </html>

@@ -27,8 +27,8 @@
     if ($query->num_rows > 0) {
       //headers of table in format: Number Title Description Time Due Completed
       echo ("<table><tr><th>Number</th>"
-      . "<th>Title</th><th>Description</th><th>Time Due</th>
-      . <th>Completed</th></tr>");
+      . "<th>Title</th><th>Description</th><th>Time Due</th>"
+      . "<th>Completed</th></tr>");
       while($row = $query->fetch_assoc()) {
         echo ("<tr><td>" . $row['id'] . "</td><td>" . $row['title'] . "</td><td>"
         . $row['description'] . "</td><td>" . $row['due'] . " " . $row['dueTime']
@@ -48,19 +48,19 @@
     <div class = "navigation">
     <div>Other options:</div>
     <form action = "../main.html">
-      <input type="submit" value="Back to Home">
+      <input class = "button" type="submit" value="Back to Home">
     </form>
     <form action = "searchform.html">
-      <input type="submit" value="Search for a task">
+      <input class = "button" type="submit" value="Search for a task">
     </form>
     <form action = "updateform.html">
-      <input type="submit" value="Update a task">
+      <input class = "button" type="submit" value="Update a task">
     </form>
     <form action = "addform.html">
-      <input type="submit" value="Add a task">
+      <input class = "button" type="submit" value="Add a task">
     </form>
     <form action = "deleteform.html">
-      <input type="submit" value="Delete a task">
+      <input class = "button" type="submit" value="Delete a task">
     </form>
   </div>
   </body>

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+  </head>
+  <body>
     <?php
       /*$servername, $username, $password, and $port are used to connect to the
       mySQL server. change as necessary for your installation. 3306 is the
@@ -32,12 +35,10 @@
     <!--Below checks if the user would like to delete another entry-->
     <p>Would you like to delete another task?</p>
     <form action="/deleteform.html">
-      <input type="submit" value="Yes"><br>
+      <input class = "button" type="submit" value="Yes"><br>
     </form>
     <form action="/main.html">
-      <input type="submit" value="No"><br>
+      <input class = "button" type="submit" value="No"><br>
     </form>
-  </head>
-  <body>
   </body>
 </html>

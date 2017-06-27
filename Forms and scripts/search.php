@@ -62,10 +62,10 @@
      <!--Below checks if the user would like to search for another task?-->
      <p>Would you like to search again?</p>
      <form action="./searchform.html">
-       <input type="submit" value="Yes"><br>
+       <input class = "button" type="submit" value="Yes"><br>
      </form>
      <form action="../main.html">
-       <input type="submit" value="No"><br>
+       <input class = "button" type="submit" value="No"><br>
      </form>
   </body>
 </html>
