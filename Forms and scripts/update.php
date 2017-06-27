@@ -49,7 +49,7 @@
 
     else {
       echo "Number: $id <br>";
-      if ($title != "") {
+      if (trim($title) != "") {
         $stmtTitle->execute();
         $stmtTitle->close();
         echo "Title changed successfully.<br>";
@@ -58,7 +58,7 @@
         echo "Title was not changed.<br>";
       }
 
-      if ($description != "") {
+      if (trim($description) != "") {
         $stmtDes->execute();
         $stmtDes->close();
         echo "Description changed successfully.<br>";
@@ -67,7 +67,7 @@
         echo "Description was not changed.<br>";
       }
 
-      if ($due != "") {
+      if (trim($due) != "") {
         $stmtDue->execute();
         $stmtDue->close();
         echo "Date changed successfully.<br>";
@@ -76,7 +76,7 @@
         echo "Date was not changed.<br>";
       }
 
-      if ($dueTime != "") {
+      if (trim($dueTime) != "") {
         $stmtDueT->execute();
         $stmtDueT->close();
         echo "Time changed successfully.<br>";
@@ -85,7 +85,7 @@
         echo "Time was not changed.<br>";
       }
 
-      if ($completed != "") {
+      if (trim($completed) != "") {
         $stmtComp->execute();
         $stmtComp->close();
         echo "Completed status changed successfully.<br>";

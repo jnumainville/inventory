@@ -42,7 +42,7 @@
       $completed = $_POST['completed'];
 
       //below executes the assignment
-      if ($title == "" || $due == "" || $dueTime == "") {
+      if (trim($title) == "" || trim($due) == "" || trim($dueTime) == "") {
         echo "Task not added due to empty field. Only description can be empty.";
       }
       else if ($completed != "N" && $completed != "Y") {
