@@ -1,6 +1,5 @@
-This is a task management tool. As of now, basic functionality such as adding,
-deleting, searching, viewing all, and updating are complete. There is also basic
-cosmetic work complete.  
+This is a light task management tool. It supports adding, deleting, searching,
+viewing all, and updating tasks.  
 **How to use this tool:**  
 First, you will need to download a server with support for php and mysql
 specifically. I used the WAMP server from Bitnami that can be downloaded
